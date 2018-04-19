@@ -1,23 +1,144 @@
 {% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>Graduation Project</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/table.css' %}">
+          <meta http-equiv="content-type" content="charset=utf-8;"/>
+
+  
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>     
+<title>월별 예약 통계 현황</title>    
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>     
+<script type="text/javascript">       
+google.load('visualization', '1', {packages: ['corechart']});     
+</script>     
+<script type="text/javascript">       
+function drawVisualization() {         
+// Some raw data (not necessarily accurate)
+var data = google.visualization.arrayToDataTable([
+['Month', '2011년 ', '2012년 '],
+['1월',  20,      30],
+['2월',  25,      30],
+['3월',  45,      40],
+['4월',  42,      60],
+['5월',  45,      70],
+['6월',  67,      70],
+['7월',  55,      60],
+['8월',  44,      50],
+['9월',  22,      50],
+['10월',  34,      40],
+['11월',  56,      20],
+['12월',  123,      10]         
+]);
+var options = {
+title : '월별 예약 통계 현황',
+vAxis: {title: "명"},
+hAxis: {title: "월"},
+seriesType: "bars",
+series: {5: {type: "line"}}
+};
+var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+chart.draw(data, options);
+}
+google.setOnLoadCallback(drawVisualization);
+</script>  
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>2011년 예약일</title>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('visualization', '1', {packages: ['corechart']});
+</script>
+<script type="text/javascript">    
+function drawVisualization() {
+// Some raw data (not necessarily accurate)
+var data = google.visualization.arrayToDataTable([
+['날짜', '2011년', '2010년', '2009년'],
+['1월 1주',  30,      40,         20],
+['1월 2주',  40,      20,        30],
+['1월 3주',  25,      30,        50],
+['1월 4주',  50,      70,        80],
+['2월 1주',  70,      70,         60],
+['2월 2주',  200,      200,         150],
+['2월 3주',  100,      120,         10],
+['2월 4주',  25,      30,         50],
+['3월 1주',  28,      50,         80],
+['3월 2주',  83,      90,         80],
+['3월 3주',  78,      80,         30],
+['3월 4주',  120,      50,         80],
+['4월 1주',  405,      350,         280],
+['4월 2주',  203,      100,         120],
+['4월 3주',  10,      50,         30],
+['4월 4주',  11,      30,         50]
+]);
+ 
+var options = {
+title : '2011년 ',
+vAxis: {title: "인원"},
+hAxis: {title: "날짜"},
+seriesType: "bars",
+series: {1: {type: "line"},2: {type: "line"}}
+};
+var chart = new google.visualization.ComboChart(document.getElementById('chart_div2'));
+chart.draw(data, options);
+}
+google.setOnLoadCallback(drawVisualization);
+</script>
+
     </head>
     <body>
-   
+
+
 
         <div class="page-header">
         {% if user.is_authenticated %}
 
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <h1><a href="/">Django Girls Blog</a></h1>
+            <h1><a href="/">Self Learning VR Streaming Scheme for Focusable-video Contents with Cumulative data
+</a></h1>
                     {% endif %}
 
         </div>
+        <table class="paleBlueRows">
+<thead>
+<tr>
+<th>head1</th>
+<th>head2</th>
+<th>head3</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td>foot1</td>
+<td>foot2</td>
+<td>foot3</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td>cell1_1</td>
+<td>cell2_1</td>
+<td>cell3_1</td>
+</tr>
+</tbody>
+</table>
+        <span align="left" width="200px"; style="border:3px; border-style: solid; border-color: #9DC8C8; ">&nbsp; Name of video: Baseball &nbsp; </span>
+&nbsp;&nbsp;   
+<span align="left" width="200px"; style="border:3px; border-style: solid; border-color: #58C9B9; ">&nbsp; Time of video: 00:03:27 &nbsp; </span>
+&nbsp;&nbsp;   
+
+<span align="left" width="200px"; style="border:3px; border-style: solid; border-color: #519D9E; ">&nbsp; Information of codec:  &nbsp; </span>
+&nbsp;&nbsp; 
+<div id="chart_div" style="width: 900px; height: 500px;"></div>  
+
+<div id="chart_div2" style="width: 900px; height: 500px;"></div>
+
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
