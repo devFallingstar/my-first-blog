@@ -9,6 +9,8 @@
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
         <link rel="stylesheet" href="{% static 'css/table.css' %}">
+        <link rel="stylesheet" href="{% static 'css/graph.css' %}">
+
         <meta http-equiv="content-type" content="charset=utf-8;"/>
 
   <style>
@@ -791,45 +793,93 @@ function zoomChart() {
 <div id="chartdiv"></div>   
 
         <div style="width:27%; height:100px padding:3px; border:1px solid white; background-color:#2FCC71; color:white; float:left; margin-left:20px; margin-right:10px;"><br/>&nbsp;&nbsp; Name of Video <br/><b>&nbsp; &nbsp;Basketball Game<br/><p/></b></div>
-        <div style="width:27%; height:100px padding:3px; border:1px solid white; background-color:#3398FA; color:white; float:left; margin-right:10px;"><br/>&nbsp;&nbsp;Time of Video <br/><b>&nbsp; &nbsp;00:07:34<br/><p/></b></div>
+        <div style="width:27%; height:100px padding:3px; border:1px solid white; background-color:#3398FA; color:white; float:left; margin-right:10px;"><br/>&nbsp;&nbsp;Hits This Video by Users <br/><b>&nbsp; &nbsp;102 person see this one<br/><p/></b></div>
         <div style="width:27%; height:100px padding:3px; border:1px solid white; background-color:#E77E23; color: white; float:left;"><br/>&nbsp; &nbsp;Information of Codec <br/><b>&nbsp;&nbsp;WMP(Window Media Player)<br/><p/></b></div>
 
 <br/>
-&nbsp; 
+&nbsp;
+       
+<div id="chartdiv" style="position:relative;height:910px;">
+<div id="wrapper">
+    <div id="header">
+        <p id="txt_title">Concentration about This Video</p>
+        <p id="txt_subtitle">Analysis video information that is focusable or not from sight of person</p>
+    </div>
 
-        <div id="chart_div" style="width: 900px; height: 500px; float:left;"></div>  
-
-
-        <table class="paleBlueRows">
-<thead>
-<tr>
-<th>head1</th>
-<th>head2</th>
-<th>head3</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td>foot1</td>
-<td>foot2</td>
-<td>foot3</td>
-</tr>
-</tfoot>
-<tbody>
-<tr>
-<td>cell1_1</td>
-<td>cell2_1</td>
-<td>cell3_1</td>
-</tr>
-</tbody>
-</table>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% block content %}
-                    {% endblock %}
+    <div id="q2_2010">
+    <div id="q1_2010">
+    <div id="q4_2009">
+    <div id="q3_2009">
+    <div id="q2_2009">
+    <div id="q1_2005">
+        <div id="labels">
+            <ul>
+                <li><span></span>90%-100%</li>
+                <li><span></span>80%-90%</li>
+                <li><span></span>70%-80%</li>
+                <li><span></span>60%-70%</li>
+                <li><span></span>0%-60%</li>
+            </ul>
+        </div>
+        <div id="pie_ico">Pie &raquo;</div>
+        <div id="pyr_ico">&laquo; Pyramid</div>
+        <div id="percentage_wrapper">
+            <div id="percentage">
+                <ul>
+                    <li><p>60.14%</p><p>61.79%</p><p>63.90%</p><p>67.02%</p><p>68.28%</p><p>89.68%</p></li>
+                    <li><p>24.98%</p><p>24.56%</p><p>24.39%</p><p>23.28%</p><p>23.22%</p><p>6.83%</p></li>
+                    <li><p>7.14%</p><p>6.03%</p><p>4.27%</p><p>3.08%</p><p>2.35%</p><p>0%</p></li>
+                    <li><p>5.10%</p><p>4.91%</p><p>4.64%</p><p>4.35%</p><p>3.89%</p><p>2.36%</p></li>
+                    <li><p>2.66%</p><p>2.73%</p><p>2.52%</p><p>2.29%</p><p>2.27%</p><p>1.15%</p></li>
+                </ul>
+            </div>
+        </div>
+        <div id="slider">
+            <div id="chart_holder">
+                <div id="pie_chart">
+                    <ul>
+                        <li id="c1_r"><p><span class="pie_left"></span></p></li>    
+                        <li id="c1_l"><p><span class="pie_right"></span></p></li>
+                        <li id="c2_r"><p><span class="pie_left"></span></p></li>    
+                        <li id="c2_l"><p><span class="pie_right"></span></p></li>
+                        <li id="c3_r"><p><span class="pie_left"></span></p></li>    
+                        <li id="c3_l"><p><span class="pie_right"></span></p></li>
+                        <li id="c4_r"><p><span class="pie_left"></span></p></li>    
+                        <li id="c4_l"><p><span class="pie_right"></span></p></li>
+                        <li id="c5_r"><p><span class="pie_left"></span></p></li>    
+                        <li id="c5_l"><p><span class="pie_right"></span></p></li>
+                    </ul>
+                </div>
+                <div id="pyr_chart">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
                 </div>
             </div>
         </div>
+        <div id="btn_panel">
+            <ul>
+                <li><a href="#q1_2005"><span>V1</span><span>1st</span></a></li>
+                <li><a href="#q2_2009"><span>V2</span><span>2nd</span></a></li>
+                <li><a href="#q3_2009"><span>V3</span><span>3rd</span></a></li>
+                <li><a href="#q4_2009"><span>V4</span><span>4th</span></a></li>
+                <li><a href="#q1_2010"><span>v5</span><span>5th</span></a></li>
+                <li><a href="#q2_2010"><span>V6</span><span>6th</span></a></li>
+            </ul>
+        </div>
+    </div> <!--q1_2005-->
+    </div> <!--q2_2009-->
+    </div> <!--q3_2009-->
+    </div> <!--q4_2009-->
+    </div> <!--q1_2010-->
+    </div> <!--q2_2010-->
+</div>
+      </div>
     </body>
 </html>
